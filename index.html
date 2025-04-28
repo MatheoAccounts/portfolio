@@ -3,8 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
+  <title>3D Scene | GitHub Page</title>
   <link rel="stylesheet" href="assets/css/style.css" />
+  
+  <!-- ImportMap to load Three.js and add-ons (modules) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <!-- Main script (must be last to ensure DOM is ready) -->
+  <!-- Mark the main.js as a module -->
+  <script type="module" src="assets/js/main.js" defer></script>
+
+  <!-- Optional: Add a favicon -->
+  <link rel="icon" href="assets/favicon.ico" />
 </head>
 <body>
   <header>
@@ -14,9 +31,12 @@
       <a href="about.html">About</a>
     </nav>
   </header>
+
   <main>
-    <p>This is the homepage of my GitHub Pages site.</p>
+    <div id="scene-container" style="width: 100%; height: 500px;"></div> <!-- Make sure there's a size for the scene -->
+    <button id="animateBtn">Move Camera</button>
   </main>
+
   <footer>
     <p>© 2025 Your Name</p>
   </footer>
