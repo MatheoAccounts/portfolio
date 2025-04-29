@@ -1,52 +1,75 @@
-import * as THREE from 'three';  // Importing the entire Three.js library
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';  // Importing GLTFLoader from the addons path
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';  // Importing OrbitControls
+document.querySelectorAll('.nav-right a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    const target = document.querySelector(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
 
-let scene, camera, renderer, controls;
+const fieldTags = document.querySelectorAll('#fieldFilter .filter-tag');
+const langTags = document.querySelectorAll('#langFilter .filter-tag');
+const simRealTags = document.querySelectorAll('#SimRealFilter .filter-tag');
+const projectCards = document.querySelectorAll('.project-card');
 
-init();
-animate();
+let selectedFields = new Set();
+let selectedLangs = new Set();
+let selectedSimReal = new Set();
 
-function init() {
-  // Create scene
-  scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xaaaaaa);
+function normalizeTag(tag) {
+  return tag.replace(/\s+/g, '').toLowerCase();
+}
 
-  // Create camera
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100);
-  camera.position.set(0, 10, 3);
+function normalizeSelectedTags(tagSet) {
+  return [...tagSet].map(tag => tag.replace(/\s+/g, '').toLowerCase());
+}
 
-  // Create renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.getElementById('scene-container').appendChild(renderer.domElement);
+function updateTagSet(tagSet, tagText, isActive) {
+  if (isActive) tagSet.add(tagText);
+  else tagSet.delete(tagText);
+}
 
-  // Lighting
-  const light = new THREE.DirectionalLight(0xffffff, 1);
-  light.position.set(5, 5, 5);
-  scene.add(light);
+function filterProjects() {
+  const normalizedSelectedFields = normalizeSelectedTags(selectedFields);
+  const normalizedSelectedLangs = normalizeSelectedTags(selectedLangs);
+  const normalizedSelectedSimReal = normalizeSelectedTags(selectedSimReal);
 
-  const ambient = new THREE.AmbientLight(0x404040);
-  scene.add(ambient);
+  projectCards.forEach(card => {
+    const cardField = card.dataset.field
+      .split(',')
+      .map(f => normalizeTag(f));
+    const cardLangs = card.dataset.lang
+      .split(',')
+      .map(l => normalizeTag(l));
+    const cardSimReal = card.dataset.simreal
+      .split(',')
+      .map(s => normalizeTag(s));
 
-  // Initialize OrbitControls (for camera control)
-  controls = new OrbitControls(camera, renderer.domElement);
+    const matchField = normalizedSelectedFields.length === 0 || normalizedSelectedFields.some(field => cardField.includes(field));
+    const matchLang = normalizedSelectedLangs.length === 0 || normalizedSelectedLangs.some(lang => cardLangs.includes(lang));
+    const matchSimReal = normalizedSelectedSimReal.length === 0 || normalizedSelectedSimReal.some(simReal => cardSimReal.includes(simReal));
 
-  // Load the 3D model using GLTFLoader
-  const loader = new GLTFLoader();
-  loader.load('assets/models/my_model.glb', function (gltf) {
-    console.log("Model loaded:", gltf);
-    scene.add(gltf.scene);
-  }, undefined, function (error) {
-    console.error("Error loading model:", error);
+    card.style.display = (matchField && matchLang && matchSimReal) ? 'flex' : 'none';
   });
 }
 
-function animate() {
-  requestAnimationFrame(animate);
-
-  // Update controls
-  controls.update();
-
-  renderer.render(scene, camera);
+function handleTagClick(tagElement, group, tagSet) {
+  const tagText = tagElement.dataset.tag;
+  const isActive = tagElement.classList.toggle('active');
+  updateTagSet(tagSet, tagText, isActive);
+  filterProjects();
 }
+
+fieldTags.forEach(tag => {
+  tag.addEventListener('click', () => handleTagClick(tag, fieldTags, selectedFields));
+});
+
+langTags.forEach(tag => {
+  tag.addEventListener('click', () => handleTagClick(tag, langTags, selectedLangs));
+});
+
+simRealTags.forEach(tag => {
+  tag.addEventListener('click', () => handleTagClick(tag, simRealTags, selectedSimReal));
+});
