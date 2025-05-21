@@ -2,61 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mathéo Taillandier - Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SNCF Project – Shortest Path Algorithm</title>
+  <link rel="stylesheet" href="styles.css" /> <!-- Link to your main CSS -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #2c3e50;
+    }
+
+    .project-image {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      margin: 15px 0;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e0e0e0;
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .section-title {
+      margin-top: 30px;
+      color: #34495e;
+      font-size: 1.4em;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-left">Mathéo Taillandier</div>
-    <div class="nav-right">
-      <a href="index.html">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#about">About</a>
-    </div>
-  </nav>
+  <div class="container">
+    <h1>SNCF Project: Shortest Path Finder</h1>
+    <img src="assets/images/drone.png" alt="Drone Project" class="project-image"/>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>SCNF Project - Shortest Path</h1>
-    </div>
-  </header>
-
-  <!-- Projects Descrption -->
-  <section id="description" class="projects-description">
-
-    <div class="description-row">
-      <div class="description-image">
-        <img src="assets/images/drone2.png" alt="Project 3" />
-      </div>
-      <div class="description-text">
-        <h3>Project 3 Title</h3>
-        <p>Description for project 3 goes here. Pellentesque habitant morbi...</p>
-      </div>
+    <div class="tags">
+      <span class="tag">Computer Vision</span>
+      <span class="tag">Optimization</span>
+      <span class="tag">Python</span>
+      <span class="tag">ROS</span>
+      <span class="tag">Simulation</span>
     </div>
 
-    <div class="description-row reverse">
-      <div class="description-image">
-        <img src="assets/images/drone2.png" alt="Project 3" />
-      </div>
-      <div class="description-text">
-        <h3>Project 3 Title</h3>
-        <p>Description for project 3 goes here. Pellentesque habitant morbi...</p>
-      </div>
-    </div>
+    <h2 class="section-title">Overview</h2>
+    <p>
+      This project involved developing an intelligent algorithm to compute the shortest path between two railway stations on a map. The project was completed in a simulated environment using ROS and Python, with the aid of visual and spatial data.
+    </p>
 
-    <!-- Add more rows as needed -->
+    <h2 class="section-title">Key Features</h2>
+    <ul>
+      <li>Parsed a graph of stations and routes from map data</li>
+      <li>Implemented Dijkstra’s and A* algorithms for path planning</li>
+      <li>Integrated ROS for real-time simulation of the navigation system</li>
+      <li>Used camera feeds for potential station detection (CV integration)</li>
+    </ul>
 
-  </section>
+    <h2 class="section-title">Technologies Used</h2>
+    <ul>
+      <li><strong>Python:</strong> Core logic and algorithm design</li>
+      <li><strong>ROS (Robot Operating System):</strong> Simulation environment and real-time communication</li>
+      <li><strong>OpenCV:</strong> For future integration with real-world station detection</li>
+    </ul>
 
+    <h2 class="section-title">Outcome</h2>
+    <p>
+      The resulting system is capable of dynamically computing optimal paths through a network of stations, with potential applications in logistics, rail automation, and drone-based monitoring systems.
+    </p>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Mathéo Taillandier</p>
-  </footer>
-  <script src="assets/js/main.js" defer></script>
-  
+    <h2 class="section-title">Next Steps</h2>
+    <p>
+      Future improvements include real-world data integration, enhanced obstacle avoidance, and deploying the model on an embedded system for field testing.
+    </p>
+  </div>
 </body>
 </html>

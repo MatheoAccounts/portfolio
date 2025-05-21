@@ -304,7 +304,6 @@ footer {
 
 .projects-description {
   width: 100%;
-  padding: 2rem 1.5rem; /* 2rem top/bottom, 1.5rem left/right */
   box-sizing: border-box; /* ensures padding doesn’t increase total width */
   margin: 0 auto;
 }
@@ -313,7 +312,6 @@ footer {
 .description-row {
   display: flex;
   align-items: center;
-  margin-bottom: 3rem;
   gap: 2rem;
 }
 
