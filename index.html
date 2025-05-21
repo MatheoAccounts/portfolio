@@ -11,7 +11,7 @@
   <nav class="navbar">
     <div class="nav-left">Mathéo Taillandier</div>
     <div class="nav-right">
-      <a href="#projects">Projects</a>
+      <a href="index.html">Projects</a>
       <a href="#resume">Resume</a>
       <a href="#about">About</a>
     </div>
@@ -44,24 +44,10 @@
   <!-- Projects Section -->
   <section id="projects" class="projects-section">
     <div class="projects-grid">
-      <a href="#" class="project-card" data-field="Computer Vision" data-lang="Python, ROS" data-simreal="Simulation">
+      <div class="project-card" data-field="Computer Vision, Optimization" data-lang="Python, C++" data-simreal="Simulation" data-project="sncf">
         <div class="card-top">
           <img src="assets/images/drone.png" alt="Drone Project Image" class="project-image" />
-          <h3>Drone Project</h3>
-          <p>Path planning for an autonomous drone (simulation and real-life)</p>
-        </div>
-        <div class="card-bottom">
-          <div class="tags">
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Python</span>
-            <span class="tag">ROS</span>
-          </div>
-        </div>
-      </a>
-      <a href="#" class="project-card" data-field="Computer Vision, Optimization" data-lang="Python, ROS" data-simreal="Simulation">
-        <div class="card-top">
-          <img src="assets/images/drone.png" alt="Drone Project Image" class="project-image" />
-          <h3>SNCF Project</h3>
+          <h3>SNCF Project__</h3>
           <p>Built an algorithm to find the shortest path between two stations</p>
         </div>
         <div class="card-bottom">
@@ -71,7 +57,8 @@
             <span class="tag">ROS</span>
           </div>
         </div>
-      </a>
+      </div>
+    
     </div>
   </section>
 
@@ -79,7 +66,8 @@
   <footer>
     <p>© 2025 Mathéo Taillandier</p>
   </footer>
-
-  <script src="assets/js/main.js"></script>
+  <div id="modal-container"></div>
+  <script src="assets/js/main.js" defer></script>
+  
 </body>
 </html>

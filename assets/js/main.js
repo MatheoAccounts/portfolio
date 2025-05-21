@@ -1,13 +1,19 @@
 document.querySelectorAll('.nav-right a').forEach(link => {
   link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    const href = this.getAttribute('href');
+
+    // Check if href starts with '#', indicating an internal anchor
+    if (href && href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    // else, for external links or different pages, do nothing -> allow normal navigation
   });
 });
+
 
 const fieldTags = document.querySelectorAll('#fieldFilter .filter-tag');
 const langTags = document.querySelectorAll('#langFilter .filter-tag');
@@ -72,4 +78,52 @@ langTags.forEach(tag => {
 
 simRealTags.forEach(tag => {
   tag.addEventListener('click', () => handleTagClick(tag, simRealTags, selectedSimReal));
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("modal-container");
+
+  // Add click listener to all cards
+  document.querySelectorAll(".project-card").forEach(card => {
+    card.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      const projectId = card.dataset.project;
+      if (!projectId) return;
+
+      const modalUrl = `modal-${projectId}.html`;
+
+      try {
+        const res = await fetch(modalUrl);
+        const modalHtml = await res.text();
+
+        // Replace the content of the modal container
+        container.innerHTML = modalHtml;
+
+        const modal = container.querySelector(".modal");
+        if (modal) {
+          modal.style.display = "flex";
+        } else {
+          console.warn(`Modal not found in ${modalUrl}`);
+        }
+      } catch (err) {
+        console.error(`Could not load modal from ${modalUrl}`, err);
+      }
+    });
+  });
+
+  // Close when clicking outside
+  window.addEventListener("click", (event) => {
+    const modal = container.querySelector(".modal");
+    if (modal && event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Optional: global close function
+  window.closeModal = function () {
+    const modal = container.querySelector(".modal");
+    if (modal) modal.style.display = "none";
+  };
 });
