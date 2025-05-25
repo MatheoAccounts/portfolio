@@ -137,13 +137,19 @@ body {
   overflow: hidden;
 }
 
-.project-card img.project-image {
+.project-card img.project-image,
+.project-card video.project-video {
   width: 100%;
-  height: 55%;
+  height: 160px; /* 220px given 400px container */
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  display: block; /* Prevent inline spacing issues */
+  margin: 0;
+  padding: 0;
+  border: none;
 }
+
 
 .project-card .card-top {
   display: flex;
@@ -170,7 +176,7 @@ body {
 }
 
 .project-card p {
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
   font-size: 0.9rem;
   color: #555;
 }
@@ -215,11 +221,11 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.75);
+  background-color: rgba(0, 0, 0, 0.5); ;
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 9999;
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -237,6 +243,7 @@ footer {
 
 .modal-image {
   width: 100%;
+  max-height: 500px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
@@ -254,9 +261,27 @@ footer {
 .modal-image-collage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
+.modal-image-collage video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.modal-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
 .close-btn {
   position: absolute;
@@ -267,19 +292,31 @@ footer {
   cursor: pointer;
 }
 
+.modal .title {
+      font-size: 2.0em;
+      margin-top: 15px;
+      color: #2c3e50;
+}
+
 .modal .tags{
-      margin: 15px 0;
+      margin: 4px 0;
 }
 
 .modal .tags .tag {
       display: inline-block;
       background: #e0e0e0;
       color: #333;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.9em;
-      margin-right: 10px;
-      margin-bottom: 5px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 0.7em;
+      margin-right: 5px;
+      margin-bottom: 3px;
+}
+
+.modal .section-title {
+      margin-top: 15px;
+      color: #34495e;
+      font-size: 1.4em;
 }
 
 .modal-footer {
@@ -287,6 +324,22 @@ footer {
   justify-content: flex-end;
   margin-top: 1.5rem;
 }
+
+.modal p {
+      line-height: 1.6;
+}
+
+.modal ul {
+  padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.modal li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
 
 .more-button {
   text-decoration: none;
@@ -356,6 +409,6 @@ footer {
 
 @keyframes fadeIn {
   from { background-color: rgba(0,0,0,0); }
-  to { background-color: rgba(0,0,0,0.75); }
+  to { background-color: rgba(0, 0, 0, 0.5); }
 }
 

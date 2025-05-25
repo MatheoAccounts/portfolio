@@ -1,27 +1,47 @@
 <!-- modal-sncf.html -->
 <div id="project-modal" class="modal">
   <div class="modal-content">
-    <div class="modal-image-collage">
-      <img src="assets/images/drone1.png" alt="Drone 1" />
-      <img src="assets/images/drone2.png" alt="Drone 2" />
-      <img src="assets/images/drone3.png" alt="Drone 3" />
-      <img src="assets/images/drone4.png" alt="Drone 4" />
+    <div class="modal-image">
+      <img src="assets/images/sncf/demo_screenshot.png" alt="SNCF app demo" />
     </div>
 
-    <h2>SNCF Project: Shortest Path Finder</h2>
+    <h2 class="title">SNCF Project: Shortest Path Finder</h2>
     <div class="tags">
-      <span class="tag">Computer Vision</span>
+      <span class="tag">API</span>
+      <span class="tag">Optimization</span>
+      <span class="tag">Graph Search</span>
       <span class="tag">Python</span>
-      <span class="tag">ROS</span>
       <span class="tag">Simulation</span>
     </div>
-    <p>This project involved developing an intelligent algorithm to compute the shortest path between two railway stations on a map...</p>
+    <h2 class="section-title">Overview</h2>
+    <p>
+      This project involved developing an intelligent algorithm to compute the shortest path between two railway stations on a map. The project was completed in a simulated environment using ROS and Python, with the aid of visual and spatial data.
+    </p>
+
+    <h2 class="section-title">Key Features</h2>
     <ul>
       <li>Parsed a graph of stations and routes from map data</li>
       <li>Implemented Dijkstra’s and A* algorithms for path planning</li>
-      <li>Integrated ROS for real-time simulation</li>
-      <li>Used OpenCV for future station detection</li>
+      <li>Integrated ROS for real-time simulation of the navigation system</li>
+      <li>Used camera feeds for potential station detection (CV integration)</li>
     </ul>
+
+    <h2 class="section-title">Technologies Used</h2>
+    <ul>
+      <li><strong>Python:</strong> Core logic and algorithm design</li>
+      <li><strong>ROS (Robot Operating System):</strong> Simulation environment and real-time communication</li>
+      <li><strong>OpenCV:</strong> For future integration with real-world station detection</li>
+    </ul>
+
+    <h2 class="section-title">Outcome</h2>
+    <p>
+      The resulting system is capable of dynamically computing optimal paths through a network of stations, with potential applications in logistics, rail automation, and drone-based monitoring systems.
+    </p>
+
+    <h2 class="section-title">Next Steps</h2>
+    <p>
+      Future improvements include real-world data integration, enhanced obstacle avoidance, and deploying the model on an embedded system for field testing.
+    </p>
 
     <!-- More Button -->
     <div class="modal-footer">
