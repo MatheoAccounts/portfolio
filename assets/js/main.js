@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const projectId = card.dataset.project;
       if (!projectId) return;
 
-      const modalUrl = `modal-${projectId}.html`;
+      const modalUrl = `modals/modal-${projectId}.html`;
 
       try {
         const res = await fetch(modalUrl);
