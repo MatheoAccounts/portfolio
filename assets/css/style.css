@@ -78,6 +78,7 @@ body {
   flex-direction: column;
   gap: 0.8rem;
   min-width: 300px;
+  max-width: 500px;
 }
 
 .filter-group {
