@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mathéo Taillandier - Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .pdf-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .pdf-viewer {
+      width: 90%;
+      height: 800px; /* Adjust height as needed */
+      border: 1px solid #ccc;
+      overflow: auto;
+    }
+
+    .download-link {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .download-link a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+
+    .download-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-left">Mathéo Taillandier</div>
+    <div class="nav-right">
+      <a href="index.html">Projects</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Resume</h1>
+    </div>
+  </header>
+
+  <!-- PDF Section -->
+  <div class="pdf-container">
+    <iframe 
+      class="pdf-viewer" 
+      src="assets/documents/MathéoTaillandier_EnglishCV_LateX.pdf" 
+      type="application/pdf"
+    ></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Mathéo Taillandier</p>
+  </footer>
+</body>
+</html>

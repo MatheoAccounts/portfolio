@@ -11,9 +11,7 @@
   <nav class="navbar">
     <div class="nav-left">Mathéo Taillandier</div>
     <div class="nav-right">
-      <a href="index.html">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#about">About</a>
+      <a href="resume.html">Resume</a>
     </div>
   </nav>
 
@@ -30,12 +28,19 @@
           <span class="filter-tag" data-tag="API">API</span>
           <span class="filter-tag" data-tag="Graph Search">Graph Search</span>
           <span class="filter-tag" data-tag="Simulation">Object Oriented Programming</span>
+          <span class="filter-tag" data-tag="Deep Learning">Deep Learning</span>
+          <span class="filter-tag" data-tag="Reinforcement Learning">Reinforcement Learning</span>
+          <span class="filter-tag" data-tag="System Identification">System Identification</span>
+          <span class="filter-tag" data-tag="Microcontroller">Microcontroller</span>
+          <span class="filter-tag" data-tag="Signal Processing">Signal Processing</span>
+
         </div>
         <div class="filter-group" id="langFilter">
           <span class="filter-tag" data-tag="Python">Python</span>
-          <span class="filter-tag" data-tag="ROS">ROS</span>
+          <span class="filter-tag" data-tag="C">C</span>
           <span class="filter-tag" data-tag="C++">C++</span>
           <span class="filter-tag" data-tag="MATLAB">MATLAB</span>
+          <span class="filter-tag" data-tag="Assembly">Assembly</span>
         </div>
         <div class="filter-group" id="SimRealFilter">
           <span class="filter-tag" data-tag="Simulation">Simulation</span>
@@ -67,7 +72,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="Python" data-simreal="Simulation, Real Life" data-project="drone">
+      <div class="project-card" data-field="Optimization, Path Planning, Control, Computer Vision" data-lang="Python" data-simreal="Simulation, Real Life" data-project="drone">
         <div class="card-top">
           <img src="assets/images/drone/drone.jpg" alt="Drone Project Image" class="project-image" />
           <h3>Drone Project</h3>
@@ -79,6 +84,8 @@
           <div class="tags">
             <span class="tag">Optimization</span>
             <span class="tag">Path Planning</span>
+            <span class="tag">Control</span>
+            <span class="tag">Computer Vision</span>
             <span class="tag">Python</span>
             <span class="tag">Simulation</span>
             <span class="tag">Real Life</span>
@@ -104,7 +111,7 @@
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="dlfav">
+      <div class="project-card" data-field="Optimization, Path Planning, Computer Vision" data-lang="Python" data-simreal="Simulation" data-project="dlfav">
         <div class="card-top">
           <img src="assets/images/DLFAV/sample_aux_outputs.png" alt="DLFAV Project Image" class="project-image" />
           <h3>End-to-End Planning for Autonomous Driving</h3>
@@ -115,13 +122,14 @@
         <div class="card-bottom">
           <div class="tags">
             <span class="tag">Deep Learning</span>
+            <span class="tag">Computer Vision</span>
             <span class="tag">Python</span>
             <span class="tag">Simulation</span>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="classification">
+      <!-- <div class="project-card" data-field="Deep Learning" data-lang="Python" data-simreal="Simulation" data-project="classification">
         <div class="card-top">
           <video autoplay loop muted playsinline class="project-video">
             <source src="assets/images/tchanz/Demo.mp4" type="video/mp4" />
@@ -134,16 +142,14 @@
         </div>
         <div class="card-bottom">
           <div class="tags">
-            <span class="tag">Optimization</span>
-            <span class="tag">Path Planning</span>
+            <span class="tag">Deep Learning</span>
             <span class="tag">Python</span>
             <span class="tag">Simulation</span>
-            <span class="tag">Real Life</span>
           </div>
         </div>
-      </div>
+      </div> -->
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="leggedrl">
+      <div class="project-card" data-field="Reinforcement Learning, Control" data-lang="Python" data-simreal="Simulation" data-project="leggedrl">
         <div class="card-top">
           <img src="assets/images/Legged_robots/Demo.png" alt="leggedRL Project Image" class="project-image" />
           <h3>Quadruped RL project</h3>
@@ -154,24 +160,26 @@
         <div class="card-bottom">
           <div class="tags">
             <span class="tag">Reinforcement Learning</span>
+            <span class="tag">Control</span>            
             <span class="tag">Python</span>
             <span class="tag">Simulation</span>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="dea">
+      <div class="project-card" data-field="System Identification, Control, Reinforcement Learning" data-lang="Python" data-simreal="Simulation, Real Life" data-project="dea">
         <div class="card-top">
           <img src="assets/images/dea/dea.jpg" alt="DEA Project Image" class="project-image" />
-          <h3>DEA Research</h3>
+          <h3>Diealectric Elastomer Actuator (DEA) Research</h3>
           <p>
-            Created a simulation of an anthill using object-oriented programming in C++. 
+           Worked on the characterization and control of a new type of DEA using a custom-made test bench. 
           </p>
         </div>
         <div class="card-bottom">
           <div class="tags">
-            <span class="tag">Optimization</span>
-            <span class="tag">Path Planning</span>
+            <span class="tag">System Identification</span>
+            <span class="tag">Reinforcement Learning</span>
+            <span class="tag">Control</span>
             <span class="tag">Python</span>
             <span class="tag">Simulation</span>
             <span class="tag">Real Life</span>
@@ -179,45 +187,42 @@
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="carmpc">
+      <div class="project-card" data-field="Optimization, Control" data-lang="Matlab" data-simreal="Simulation" data-project="carmpc">
         <div class="card-top">
           <img src="assets/images/carMPC/carmpc.png" alt="carMPC Project Image" class="project-image" />
           <h3>Car MPC Project</h3>
           <p>
-            Created a simulation of an anthill using object-oriented programming in C++. 
+            Used Model Predictive Control on a car to make it capable of overtaking, adjusting its speed, and avoiding collisions.
           </p>
         </div>
         <div class="card-bottom">
           <div class="tags">
             <span class="tag">Optimization</span>
-            <span class="tag">Path Planning</span>
-            <span class="tag">Python</span>
+            <span class="tag">Control</span>
+            <span class="tag">Matlab</span>
             <span class="tag">Simulation</span>
-            <span class="tag">Real Life</span>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="microcontroller">
+      <div class="project-card" data-field="Microcontroller" data-lang="Assembly" data-simreal="Real Life" data-project="microcontroller">
         <div class="card-top">
           <img src="assets/images/mcu/mcu.png" alt="Microcontroller Project Image" class="project-image" />
           <h3>Microcontroller Project</h3>
           <p>
-            Created a simulation of an anthill using object-oriented programming in C++. 
+            Programmed a microcontroller using Assembly language to demonstrate its potential in an intelligent house project. 
           </p>
         </div>
         <div class="card-bottom">
           <div class="tags">
-            <span class="tag">Optimization</span>
-            <span class="tag">Path Planning</span>
-            <span class="tag">Python</span>
-            <span class="tag">Simulation</span>
+            <span class="tag">Microcontroller</span>
+            <span class="tag">Assembly</span>
             <span class="tag">Real Life</span>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="epuck">
+      <div class="project-card" data-field="Microcontroller, Path Planning, Control, Signal Processing" data-lang="C" data-simreal="Real Life" data-project="epuck">
         <div class="card-top">
           <img src="assets/images/epuck/Epuck.png" alt="Epuck Project Image" class="project-image" />
           <h3>EPuck project </h3>
@@ -227,35 +232,36 @@
         </div>
         <div class="card-bottom">
           <div class="tags">
-            <span class="tag">Optimization</span>
+            <span class="tag">Microcontroller</span>
+            <span class="tag">Control</span>
+            <span class="tag">Signal Processing</span>
             <span class="tag">Path Planning</span>
-            <span class="tag">Python</span>
-            <span class="tag">Simulation</span>
+            <span class="tag">C</span>
             <span class="tag">Real Life</span>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="thymio">
+      <div class="project-card" data-field="Computer Vision, Path Planning, Control" data-lang="Python" data-simreal="Real Life" data-project="thymio">
         <div class="card-top">
           <img src="assets/images/thymio/thymio.png" alt="Drone Project Image" class="project-image" />
           <h3>Thymio Project</h3>
           <p>
-            Created a simulation of an anthill using object-oriented programming in C++. 
+            Programmed a Thymio robot to navigate an environment using Dijkstra’s algorithm for path planning and obstacle avoidance.
             </p>
         </div>
         <div class="card-bottom">
           <div class="tags">
-            <span class="tag">Optimization</span>
             <span class="tag">Path Planning</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Control</span>
             <span class="tag">Python</span>
-            <span class="tag">Simulation</span>
             <span class="tag">Real Life</span>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="powergridrl">
+      <!-- <div class="project-card" data-field="Optimization, Path Planning" data-lang="C++" data-simreal="Simulation" data-project="powergridrl">
         <div class="card-top">
           <img src="assets/images/drone/drone.jpg" alt="Drone Project Image" class="project-image" />
           <h3>PowerGrid Vulnerability detection RL</h3>
@@ -272,7 +278,7 @@
             <span class="tag">Real Life</span>
           </div>
         </div>
-      </div>
+      </div> -->
     
     </div>
   </section>
