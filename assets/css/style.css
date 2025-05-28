@@ -85,6 +85,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: right;
+  justify-content: right;
 }
 
 .filter-tag {
@@ -206,16 +208,7 @@ footer {
   margin-top: 3rem;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-  }
 
-  .filters {
-    margin-top: 1rem;
-  }
-}
 
 .modal {
   position: fixed;
@@ -233,9 +226,9 @@ footer {
 
 .modal-content {
   background: white;
-  padding: 30px;
+  padding: 2rem;
   border-radius: 12px;
-  max-width: 40%;
+  max-width: 50%;
   width: 90%;
   max-height: 90%;
   overflow-y: auto;
@@ -409,3 +402,29 @@ footer {
   to { background-color: rgba(0, 0, 0, 0.5); }
 }
 
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  /* .modal {
+    display: none !important;
+  } */
+
+  .modal-content {
+    padding : 1rem;
+    max-width: 90%;
+    width: 100%;
+  }
+
+  .filters {
+    margin-top: 1rem;
+  }
+
+  .filter-group {
+    align-items: center;
+    justify-content: center;
+  }
+}
