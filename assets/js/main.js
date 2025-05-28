@@ -104,6 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const modal = container.querySelector(".modal");
         if (modal) {
           modal.style.display = "flex";
+           // Attach listener to close button (if present)
+          const closeBtn = modal.querySelector(".close-btn");
+          if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+              modal.style.display = "none";
+          });
+        }
         } else {
           console.warn(`Modal not found in ${modalUrl}`);
         }
@@ -120,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.display = "none";
     }
   });
+
 
   // Optional: global close function
   window.closeModal = function () {
