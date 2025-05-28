@@ -14,6 +14,18 @@ document.querySelectorAll('.nav-right a').forEach(link => {
   });
 });
 
+let lastIsMobile = window.innerWidth <= 1000;
+
+window.addEventListener("resize", () => {
+  const isMobile = window.innerWidth <= 1000;
+
+  if (isMobile !== lastIsMobile) {
+    location.reload();
+  }
+
+  lastIsMobile = isMobile;
+});
+
 
 const fieldTags = document.querySelectorAll('#fieldFilter .filter-tag');
 const langTags = document.querySelectorAll('#langFilter .filter-tag');
@@ -82,6 +94,20 @@ simRealTags.forEach(tag => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
+  const resumeLink = document.getElementById("resume-link");
+
+  // Change href depending on screen width
+  const isMobile = window.innerWidth <= 1000;
+
+  if (isMobile) {
+    resumeLink.href = "assets/documents/resume.pdf";
+    resumeLink.target = "_blank";
+    resumeLink.rel = "noopener";
+  } else {
+    resumeLink.href = "resume.html";
+    resumeLink.removeAttribute("target");
+    resumeLink.removeAttribute("rel");
+  }
   const container = document.getElementById("modal-container");
 
   // Add click listener to all cards
