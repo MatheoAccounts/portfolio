@@ -5,30 +5,38 @@
       <img src="assets/images/dea/dea.jpg" alt="Drone 1" />
     </div>
 
-    <h2 class="title">SNCF Project: Shortest Path Finder</h2>
+    <h2 class="title">DEA Research Project</h2>
     <div class="tags">
-      <span class="tag">API</span>
-      <span class="tag">Optimization</span>
-      <span class="tag">Graph Search</span>
+      <span class="tag">System Identification</span>
+      <span class="tag">Reinforcement Learning</span>
+      <span class="tag">Control</span>
       <span class="tag">Python</span>
       <span class="tag">Simulation</span>
+      <span class="tag">Real Life</span>
     </div>
     <h2 class="section-title">Overview</h2>
     <p>
-      This project involved developing an intelligent algorithm to compute the shortest path between two railway stations on a map. The project was completed in a simulated environment using ROS and Python, with the aid of visual and spatial data.
+      This project involved the characterization and control of a new type of DEA (Dielectric Elastomer Actuator). 
+      characterization was done using system identification techniques, and control was implemented using both reinforcement learning and PID.
     </p>
 
     <h2 class="section-title">Key Features</h2>
     <ul>
-      <li>Parsed a graph of stations and routes from map data</li>
-      <li>Implemented Dijkstra’s and A* algorithms for path planning</li>
-      <li>Integrated ROS for real-time simulation of the navigation system</li>
-      <li>Used camera feeds for potential station detection (CV integration)</li>
+      <li>DEA characterization using a custom-made test bench, and then modeled the system using Supervised Learning on Recurrent Neural Networks (RNN)</li>
+      <li>Different control using self-sensing were investigated such as PID and Reinforcement Learning</li>
     </ul>
 
-    <!-- More Button -->
-    <div class="modal-footer">
-      <a href="project-sncf.html" class="more-button">More →</a>
-    </div>
+    <h2 class="section-title">Technologies Used</h2>
+    <ul>
+      <li><strong>Python:</strong> Core logic and algorithm design</li>
+      <li><strong>Oscilloscope and DAQ:</strong> For testing and system identification</li>
+      <li><strong>Pytorch:</strong> For Reinforcement Learning and RNN</li>
+    </ul>
+
+    <h2 class="section-title">Outcome</h2>
+    <p>
+      The project resulted in showing that the capacitive sensing of the DEA changed too much with the voltage applied to the DEA, making it complex to use for control.
+      However, the system identification and control techniques developed can be applied to other types of actuators.
+    </p>
   </div>
 </div>
