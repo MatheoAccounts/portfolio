@@ -15,37 +15,33 @@
     </div>
     <h2 class="section-title">Overview</h2>
     <p>
-      This project involved developing an intelligent algorithm to compute the shortest path between two railway stations on a map. The project was completed in a simulated environment using ROS and Python, with the aid of visual and spatial data.
+      This project involved developing an intelligent algorithm to compute the shortest path between two railway stations on a map. 
+      The project was completed using SNCF Open Data and involved parsing station and route data to create a navigable graph. 
+      The algorithm was implemented in Python, utilizing Dijkstra’s algorithms with early termination for efficient pathfinding.
     </p>
 
     <h2 class="section-title">Key Features</h2>
     <ul>
       <li>Parsed a graph of stations and routes from map data</li>
-      <li>Implemented Dijkstra’s and A* algorithms for path planning</li>
-      <li>Integrated ROS for real-time simulation of the navigation system</li>
-      <li>Used camera feeds for potential station detection (CV integration)</li>
+      <li>Implemented Dijkstra’s algorithms with early termination for path planning</li>
+      <li>Used an API and a frontend and made use of GET requests</li>
     </ul>
 
     <h2 class="section-title">Technologies Used</h2>
     <ul>
       <li><strong>Python:</strong> Core logic and algorithm design</li>
-      <li><strong>ROS (Robot Operating System):</strong> Simulation environment and real-time communication</li>
-      <li><strong>OpenCV:</strong> For future integration with real-world station detection</li>
+      <li><strong>Steamlit:</strong> For frontend</li>
+      <li><strong>FastAPI:</strong> For backend</li>
     </ul>
 
     <h2 class="section-title">Outcome</h2>
     <p>
-      The resulting system is capable of dynamically computing optimal paths through a network of stations, with potential applications in logistics, rail automation, and drone-based monitoring systems.
+      The resulting app is capable of dynamically computing optimal paths through a network of stations, with potential applications in ticket sales and railway traffic optimization.
     </p>
 
     <h2 class="section-title">Next Steps</h2>
     <p>
-      Future improvements include real-world data integration, enhanced obstacle avoidance, and deploying the model on an embedded system for field testing.
+      Future improvements include dynamic ticketing data integration, even better optimization, and making the system publically available.
     </p>
-
-    <!-- More Button -->
-    <div class="modal-footer">
-      <a href="project-sncf.html" class="more-button">More →</a>
-    </div>
   </div>
 </div>
